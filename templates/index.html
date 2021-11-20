@@ -1,0 +1,73 @@
+{#
+<!DOCTYPE html>
+<html>
+<head>
+<title>Expresso</title>
+</head>
+<body>
+
+<img src="../static/espresso-logo.png">
+<p>A lightweight task tracker helping you getting your shit done!</p>
+
+</body>
+</html>
+#}
+<!doctype html>
+<html lang="en">
+<head>
+    {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+
+        <title>Your page title</title>
+    {% endblock %}
+</head>
+<body class="d-flex flex-column h-100">
+{% block content %}
+    <nav class="navbar sticky-top navbar-light bg-light shadow-sm mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/espresso-logo.png" height="50" alt="logo showing a cup of coffee">
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Create Daily Report</h1>
+        <div class="bg-light shadow-sm border-dark p-md-3 mt-3">
+            <form>
+                <div class="form-group">
+                    <label for="next-working-day">Checkin Timestamp</label>
+                    <input type="datetime-local" class="form-control disabled" id="next-working-day" aria-describedby="next-working-day-picker" value="2021-11-18 21:32" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="next-working-day">Next Working Day</label>
+                    <input type="date" class="form-control" id="next-working-day" aria-describedby="next-working-day-picker">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Accomplished Tasks</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Planned Tasks</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+{% endblock %}
+</body>
+</html>
